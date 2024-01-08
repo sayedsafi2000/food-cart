@@ -13,20 +13,34 @@
 </head>
 
 <body>
-    <div class=" bg-[#b7a18e] ">
-        <div class="w-[90%] mx-auto navbar">
+    <div class="bg-[#F07F67] ">
+
+
+        <div class="navbar w-full lg:w-[80%] mx-auto">
             <div class="navbar-start">
-                <div class="logo w-[56px] ml-4">
-                    <img class="rounded-full " src="/assest/294532338_357493563240192_8842328063037031298_n.jpg" alt="">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        <li><a>Item 1</a></li>
+                        <li><a>Item 3</a></li>
+                    </ul>
+                </div>
+                <div class="logo w-[70px]">
+                    <img class="rounded-full" src="/assest//294532338_357493563240192_8842328063037031298_n.jpg" alt="">
                 </div>
             </div>
-            <div class="navbar-center">
-                <a class="btn btn-ghost text-xl text-white">MENU</a>
-                <a class="btn btn-ghost text-xl text-white">LOCATION</a>
-                <a class="btn btn-ghost text-xl text-white">COUPNE</a>
-                <a class="btn btn-ghost text-xl text-white">CONTACT US</a>
-                <a class="btn btn-ghost text-xl text-white">ABOUT US</a>
-                
+            <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1">
+                    <li><a>Item 1</a></li>
+                    <li><a>Item 3</a></li>
+                </ul>
             </div>
             <div class="navbar-end">
                 <button class="btn btn-ghost btn-circle">
