@@ -2,14 +2,30 @@ const products = [
     {
       id: 0,
       image: "/assest/chicken_chup.jpg",
-      title: "chicken chup",
+      title: "Chicken Chup",
       details: "Chicken legs, greek yogurt, poppy seeds, garam masala",
       price: 15,
     },
     {
       id: 1,
       image: "assest/fride_rice.jpg",
-      title: "fride rice",
+      title: "Fride Rice",
+      details:
+        "Transform leftover rice with peas, eggs, soy sauce, and carrots. Delicious on its own, or alongside any entrée.",
+      price: 15,
+    },
+    {
+      id: 2,
+      image: "assest/fride_rice.jpg",
+      title: "Fride Rice",
+      details:
+        "Transform leftover rice with peas, eggs, soy sauce, and carrots. Delicious on its own, or alongside any entrée.",
+      price: 15,
+    },
+    {
+      id: 3,
+      image: "assest/fride_rice.jpg",
+      title: "Fride Rice",
       details:
         "Transform leftover rice with peas, eggs, soy sauce, and carrots. Delicious on its own, or alongside any entrée.",
       price: 15,
@@ -32,9 +48,10 @@ const products = [
   function removeCartItem(index,id) {
     cart.splice(index, 1);
     displayCart();
-    let product = document.getElementById(`${id}`);
-    let button = product.querySelector(".btn");
-    button.removeAttribute("disabled", "true");
+    var products = document.getElementById(`${id}`);
+    console.log(products)
+    var button = products.querySelector(".btn");
+    button.setAttribute("none", "true");
   }
   
   function updateQuantity(index, newQuantity) {
@@ -60,7 +77,7 @@ const products = [
           return `
               <div class="mb-4 w-full">
                 <div class="mx-auto flex items-center border-[10px] border-white shadow-lg">
-                  <img class="mr-0 pl-4 lg:mr-10 h-full w-full lg:w-[120px]" src=${image} alt="Product" />
+                  <img class=" pl-4 mr-10 w-[120px] lg:w-[120px]" src=${image} alt="Product" />
                   <div class="flex flex-col items-start">
                     <h3 class="text-lg uppercase font-bold mb-2">${title}</h3>
                     <div class="flex">
