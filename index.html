@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/43a19712b1.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.5.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class=" bg-[#b7a18e] ">
+        <div class="w-[90%] mx-auto navbar">
+            <div class="navbar-start">
+                <div class="logo w-[56px] ml-4">
+                    <img class="rounded-full " src="/assest/294532338_357493563240192_8842328063037031298_n.jpg" alt="">
+                </div>
+            </div>
+            <div class="navbar-center">
+                <a class="btn btn-ghost text-xl text-white">MENU</a>
+                <a class="btn btn-ghost text-xl text-white">LOCATION</a>
+                <a class="btn btn-ghost text-xl text-white">COUPNE</a>
+                <a class="btn btn-ghost text-xl text-white">CONTACT US</a>
+                <a class="btn btn-ghost text-xl text-white">ABOUT US</a>
+                
+            </div>
+            <div class="navbar-end">
+                <button class="btn btn-ghost btn-circle">
+                    <div class="indicator">
+                        <i class="fa-solid fa-cart-shopping text-xl text-white"></i>
+                        <span id="count" class="badge badge-xs badge-primary indicator-item">0</span>
+                    </div>
+                </button>
+                <button class="btn bg-[#b20000] text-white border-none ml-5">
+                    Order Now
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="container flex w-[80%] my-[30px] mx-auto gap-8">
+
+        <div class="w-full lg:w-[60%] grid grid-cols-2 gap-2" id="root">
+
+        </div>
+        <div class="sidebar w-[40%] rounded-lg bg-[#eee] ml-20px p-[15px] text-center">
+            <div class="head bg-[#ffd600] rounded-md h-[40px] p-[10px] mb-6 text-white flex text-center justify-center">
+                My Cart
+            </div>
+            <div id="cartItem">
+                Your Cart is empty
+            </div>
+            <div class="foot">
+                <h3 class="text-lg text-bold">Total</h3>
+                <h2 id="total" class="text-lg text-bolder">
+                    $ 0.00
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js">
+
+    </script>
+</body>
+
+</html>
