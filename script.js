@@ -51,7 +51,7 @@ const products = [
     var products = document.getElementById(`${id}`);
     console.log(products)
     var button = products.querySelector(".btn");
-    button.setAttribute("none", "true");
+    button.removeAttribute("disabled", "true");
   }
   
   function updateQuantity(index, newQuantity) {
@@ -91,7 +91,7 @@ const products = [
                       <p class="text-sm text-gray">${price}$/each</p>
                       <p id="upDown" class="text-black text-end p-5">${price * quantity
             }$</p>
-                      <button class="px-2 rounded-md bg-[#b20000] text-white border-none" onclick="removeCartItem(${index})"><i class="fa-solid fa-trash"></i></button>
+                      <button class="px-2 rounded-md bg-[#b20000] text-white border-none" onclick="removeCartItem(${index, id})"><i class="fa-solid fa-trash"></i></button>
                     </div>
                   </div>
                 </div>
