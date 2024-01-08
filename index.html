@@ -1,90 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/43a19712b1.js" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/43a19712b1.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.5.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.5.0/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-    <div class="bg-[#F07F67] ">
-
-
+  <body class="">
+    <div class="relative h-auto">
+      <div class="bg-[#F07F67]">
         <div class="navbar w-full lg:w-[80%] mx-auto">
-            <div class="navbar-start">
-                <div class="dropdown">
-                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h8m-8 6h16" />
-                        </svg>
-                    </div>
-                    <ul tabindex="0"
-                        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                        <li><a class="text-white">MENU</a></li>
-                        <li><a class="text-white">CONTACT</a></li>
-                        <li><a class="text-white font-bold">LOCATION</a></li>
-                        <li><a class="text-white font-bold">LOG IN</a></li>
-                    </ul>
-                </div>
-                <div class="logo w-[70px]">
-                    <img class="rounded-full" src="/assest//294532338_357493563240192_8842328063037031298_n.jpg" alt="">
-                </div>
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li><a class="text-white">MENU</a></li>
+                <li><a class="text-white">CONTACT</a></li>
+                <li><a class="text-white font-bold">LOCATION</a></li>
+                <li><a class="text-white font-bold">LOG IN</a></li>
+              </ul>
             </div>
-            <div class="navbar-center hidden lg:flex">
-                <ul class="menu menu-horizontal px-1">
-                    <li><a class="text-white font-bold">MENU</a></li>
-                    <li><a class="text-white font-bold">CONTACT</a></li>
-                    <li><a class="text-white font-bold">LOCATION</a></li>
-                    <li><a class="text-white font-bold">LOG IN</a></li>
-                </ul>
+            <div class="logo w-[70px]">
+              <img
+                class="rounded-full"
+                src="/assest//294532338_357493563240192_8842328063037031298_n.jpg"
+                alt=""
+              />
             </div>
-            <div class="navbar-end">
-                <button class="btn btn-ghost btn-circle">
-                    <div class="indicator">
-                        <i class="fa-solid fa-cart-shopping text-xl text-white"></i>
-                        <span id="count" class="badge badge-xs badge-primary indicator-item">0</span>
-                    </div>
-                </button>
-                <button class="btn bg-[#b20000] text-white border-none ml-5">
-                    Order Now
-                </button>
-            </div>
+          </div>
+          <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+              <li><a class="text-white font-bold">MENU</a></li>
+              <li><a class="text-white font-bold">CONTACT</a></li>
+              <li><a class="text-white font-bold">LOCATION</a></li>
+              <li><a class="text-white font-bold">LOG IN</a></li>
+            </ul>
+          </div>
+          <div class="navbar-end">
+            <button class="btn btn-ghost btn-circle">
+              <div class="indicator">
+                <i class="fa-solid fa-cart-shopping text-xl text-white"></i>
+                <span
+                  id="count"
+                  class="badge badge-xs badge-primary indicator-item"
+                  >0</span
+                >
+              </div>
+            </button>
+            <button class="btn bg-[#b20000] text-white border-none ml-5">
+              Order Now
+            </button>
+          </div>
         </div>
+      </div>
+      <div class="container none lg:flex w-[80%] my-[30px] mx-auto gap-8">
+        <div
+          class="w-full lg:w-[60%] grid grid-cols-1 lg:grid-cols-2 gap-3"
+          id="root"
+        ></div>
+      </div>
+      <div
+        class="sidebar w-full lg:w-[40%] rounded-lg bg-[#eee] ml-20px p-[15px] text-center absolute top-20 right-[-999px] duration-1000"
+      >
+        <div class="">
+          <button id="close">X</button>
+          <div
+            class="head bg-[#ffd600] rounded-md h-[40px] p-[10px] mb-6 text-white flex text-center justify-center"
+          >
+            My Cart
+          </div>
+          <div id="cartItem">Your Cart is empty</div>
+          <div class="foot">
+            <hr class="text-xl border-2 border-[#ffd600] mt-9" />
+            <div class="flex justify-between px-5 mt-5">
+              <h3 class="text-lg text-bold">Total</h3>
+              <h2 id="total" class="text-lg text-bolder">$ 0.00</h2>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="container none lg:flex w-[80%] my-[30px] mx-auto gap-8">
-        <div class="w-full lg:w-[60%] grid grid-cols-1 lg:grid-cols-2 gap-3" id="root">
-
-        </div>
-        <div class="sidebar w-full lg:w-[40%] rounded-lg bg-[#eee] ml-20px p-[15px] text-center">
-            <div class="head bg-[#ffd600] rounded-md h-[40px] p-[10px] mb-6 text-white flex text-center justify-center">
-                My Cart
-            </div>
-            <div id="cartItem">
-                Your Cart is empty
-            </div>
-            <div class="foot">
-                <hr class="text-xl border-2 border-[#ffd600] mt-9">
-                <div class="flex justify-between px-5 mt-5">
-                    <h3 class="text-lg text-bold">Total</h3>
-                    <h2 id="total" class="text-lg text-bolder">
-                        $ 0.00
-                    </h2>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js">
-
-    </script>
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>

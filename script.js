@@ -32,9 +32,22 @@ const products = [
     },
   ];
   
+  const sidebar = document.querySelector(".sidebar");
+  const closeCart = document.querySelector("#close");
+  console.log(closeCart);
+  
+  closeCart.addEventListener("click", function () {
+    if (sidebar.style.right === "0px") {
+      sidebar.style.right = "-999px";
+    } else {
+      sidebar.style.right = "0px";
+    }
+  });
+  
   let cart = [];
   
   function addToCart(id) {
+    sidebar.style.right = 0;
     const selectedItem = products.find((item) => item.id === id);
     if (selectedItem) {
       cart.push({ ...selectedItem, quantity: 1 });
@@ -45,11 +58,11 @@ const products = [
     }
   }
   
-  function removeCartItem(index,id) {
+  function removeCartItem(index, id) {
     cart.splice(index, 1);
     displayCart();
     var products = document.getElementById(`${id}`);
-    console.log(products)
+    console.log(products);
     var button = products.querySelector(".btn");
     button.removeAttribute("disabled", "true");
   }
@@ -75,28 +88,31 @@ const products = [
           total += price * quantity;
   
           return `
-              <div class="mb-4 w-full">
-                <div class="mx-auto flex items-center border-[10px] border-white shadow-lg">
-                  <img class=" pl-4 mr-10 w-[120px] lg:w-[120px]" src=${image} alt="Product" />
-                  <div class="flex flex-col items-start">
-                    <h3 class="text-lg uppercase font-bold mb-2">${title}</h3>
-                    <div class="flex">
-                      <button class="w-[50px] h-[35px] border-2 shadow-md" onclick="updateQuantity(${index}, ${quantity - 1
-            })"><i class="fas fa-minus"></i></button>
-                      <input class="bg-white w-[80px] text-center" value="${quantity}" readonly>
-                      <button class="w-[50px] h-[35px] border-2 shadow-md" onclick="updateQuantity(${index}, ${quantity + 1
-            })"><i class="fas fa-plus"></i></button>
-                    </div>
-                    <div class="w-full flex justify-between items-center">
-                      <p class="text-sm text-gray">${price}$/each</p>
-                      <p id="upDown" class="text-black text-end p-5">${price * quantity
-            }$</p>
-                      <button class="px-2 rounded-md bg-[#b20000] text-white border-none" onclick="removeCartItem(${index, id})"><i class="fa-solid fa-trash"></i></button>
+                <div class="mb-4 w-full">
+                  <div class="mx-auto flex items-center border-[10px] border-white shadow-lg">
+                    <img class=" pl-4 mr-10 w-[120px] lg:w-[120px]" src=${image} alt="Product" />
+                    <div class="flex flex-col items-start">
+                      <h3 class="text-lg uppercase font-bold mb-2">${title}</h3>
+                      <div class="flex">
+                        <button class="w-[50px] h-[35px] border-2 shadow-md" onclick="updateQuantity(${index}, ${
+            quantity - 1
+          })"><i class="fas fa-minus"></i></button>
+                        <input class="bg-white w-[80px] text-center" value="${quantity}" readonly>
+                        <button class="w-[50px] h-[35px] border-2 shadow-md" onclick="updateQuantity(${index}, ${
+            quantity + 1
+          })"><i class="fas fa-plus"></i></button>
+                      </div>
+                      <div class="w-full flex justify-between items-center">
+                        <p class="text-sm text-gray">${price}$/each</p>
+                        <p id="upDown" class="text-black text-end p-5">${
+                          price * quantity
+                        }$</p>
+                        <button class="px-2 rounded-md bg-[#b20000] text-white border-none" onclick="removeCartItem(${index},${id})"><i class="fa-solid fa-trash"></i></button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            `;
+              `;
         })
         .join("");
   
@@ -110,16 +126,16 @@ const products = [
     .map((item) => {
       const { id, image, title, price, details } = item;
       return `
-          <div id=${id} class="bg-base-100 h-[500px] shadow-xl">
-            <figure><img class="h-[240px] w-full" src=${image} alt="Product" /></figure>
-            <div class="card-body">
-              <h2 class="card-title">${title}</h2>
-              <p>${details}</p>
-              <p>Price:<span class="">$${price}</span></p>
-              <button class='btn btn-active bg-[#b20000] text-white border-none ml-5' onclick='addToCart(${id})'>Add To Cart</button>
+            <div id=${id} class="bg-base-100 h-[500px] shadow-xl">
+              <figure><img class="h-[240px] w-full" src=${image} alt="Product" /></figure>
+              <div class="card-body">
+                <h2 class="card-title">${title}</h2>
+                <p>${details}</p>
+                <p>Price:<span class="">$${price}</span></p>
+                <button class='btn btn-active bg-[#b20000] text-white border-none ml-5' onclick='addToCart(${id})'>Add To Cart</button>
+              </div>
             </div>
-          </div>
-        `;
+          `;
     })
     .join("");
   
